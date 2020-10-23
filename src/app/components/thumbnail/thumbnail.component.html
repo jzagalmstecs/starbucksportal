@@ -1,0 +1,35 @@
+<!-- <div class="container"> -->
+    <h1>Generate Thumbnail</h1>
+    <!-- <p>The blockquote element is used to present content from another source:</p> -->
+    <blockquote class="blockquote">
+        <p>This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image</p>
+        <!-- <footer class="blockquote-footer">From WWF's website</footer> -->
+    </blockquote>
+<!-- </div> -->
+
+
+<div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> {{errorMessage | json}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-fluid" src="{{imageUrl}}" width="100%">
+        </div>
+        <div class="col-md-6">
+            <img class="img-fluid" [src]="imageBlobUrl">
+        </div>
+    </div>
+</div>
+
+<form class="form-inline pt-2" [formGroup] = "thumbnailForm" (ngSubmit)="getThumbnail()">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" formControlName="urlControl" placeholder="Image Url">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+

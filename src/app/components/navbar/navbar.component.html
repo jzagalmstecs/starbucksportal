@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Starbucks</a> -->
+    <a class="navbar-brand" [routerLink] = "['/']">
+		<img [src]="urlLogo" width="30" height="30" alt="Starbucks icon" loading="lazy">
+	</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">WebBot</a>
+            <a class="nav-link" routerLink="describe" routerLinkActive="active">Describe Image</a>
+            <a class="nav-link" routerLink="thumbnail" routerLinkActive="active">Generate Thumbnail</a>
+            <a class="nav-link" routerLink="analyse" routerLinkActive="active">Analyze Image</a>
+            <a class="nav-link" href="#">Detect Objects</a>
+        </div>
+    </div>
+</nav>
